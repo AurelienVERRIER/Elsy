@@ -25,29 +25,33 @@ class App extends React.Component {
           icon="local_drink" 
           color="#3A85FF" 
           value="1.5" 
-          unit="L" />
+          unit="L"
+          />
           
           {/* Steps Box */}
           <Box 
-          icon="directions_walk favorite wb_sunny"
-          color="black red yellow"
-          value = "3000 120 -10"
-          unit = " 'steps' 'bpm' '°C' " />
+          icon="directions_walk"
+          color="black"
+          value ="3000"
+          unit = "steps"
+          />
           
           {/* Hearth Box */}
           <Box 
-          icon="directions_walk favorite wb_sunny"
-          color="black red yellow"
-          value = "3000 120 -10"
-          unit = " 'steps' 'bpm' '°C' " />
+          icon="favorite"
+          color="red"
+          value ="120"
+          unit ="bpm"
+          />
           
           
           {/* Temperature Box */}
           <Box 
-          icon="directions_walk favorite wb_sunny"
-          color="black red yellow"
-          value = "3000 120 -10"
-          unit = " 'steps' 'bpm' '°C' " />
+          icon="wb_sunny"
+          color="yellow"
+          value ="-10"
+          unit ="°C"
+          />
         
         </div>
       </div>
