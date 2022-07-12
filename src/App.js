@@ -16,43 +16,43 @@ class App extends React.Component {
       <div className="container-fluid">
         
         <div className="row">
-          <p>Heart : 80</p>
-          <p>Temperature : -20</p>
-          <p>Steps : 0</p>
+          <p>Heart : {heartMin}</p>
+          <p>Temperature : {tempsMin}</p>
+          <p>Steps : {stepsMin}</p>
           
-          {/* Water Box */}
-          <Box 
+        {/* // Water Box*/}
+        <Box  
           icon="local_drink" 
           color="#3A85FF" 
-          value="1.5" 
-          unit="L"
-          />
+          value={1.5} 
+          unit=" L"
+        />
           
-          {/* Steps Box */}
-          <Box 
+        {/* Steps Box */}
+        <Box 
           icon="directions_walk"
           color="black"
-          value ="3000"
-          unit = "steps"
-          />
+          value ={3000}
+          unit = " steps"
+        />
           
-          {/* Hearth Box */}
-          <Box 
+        {/* Hearth Box */}
+        <Box 
           icon="favorite"
           color="red"
-          value ="120"
-          unit ="bpm"
-          />
+          value ={120}
+          unit =" bpm"
+        />
           
           
-          {/* Temperature Box */}
-          <Box 
+        {/* Temperature Box */}
+        <Box 
           icon="wb_sunny"
           color="yellow"
           value ="-10"
           unit ="°C"
-          />
-        
+        />
+
         </div>
       </div>
     );
