@@ -21,12 +21,16 @@ class App extends React.Component {
   }}
 
   render() {
+    
+
     return (
       <div className="container-fluid">
         
         <div className="row">
           
-          <Box  
+
+          <Box
+            type="water" 
             icon="local_drink" 
             color="#3A85FF" 
             value={this.state.water} 
@@ -34,6 +38,7 @@ class App extends React.Component {
           />
 
           <Box 
+            type="steps"
             icon="directions_walk"
             color="black"
             value ={this.state.steps}
@@ -43,6 +48,7 @@ class App extends React.Component {
           />
  
           <Box 
+            type="heart"
             icon="favorite"
             color="red"
             value ={this.state.heart}
@@ -51,17 +57,15 @@ class App extends React.Component {
             rangeMax = {heartMax}
           />
 
-          <div>
-            <Box 
-              icon="wb_sunny"
-              color="yellow"
-              value ={this.state.temperature}
-              unit ="°C"
-              rangeMin = {tempsMin}
-              rangeMax = {tempsMax}
-            />
-            
-          </div>
+          <Box
+            type="temperature"
+            icon="wb_sunny"
+            color="yellow"
+            value ={this.state.temperature}
+            unit ="°C"
+            rangeMin = {tempsMin}
+            rangeMax = {tempsMax}
+          />
 
         </div>
       </div>
