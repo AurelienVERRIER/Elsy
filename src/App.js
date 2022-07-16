@@ -14,12 +14,17 @@ class App extends React.Component {
   constructor () {
   super()
   this.state = {
-    water: 0,
+    water: 1.5,
     heart: 120,
     temperature: -10,
     steps: 3000
   }}
 
+  // si temperature > 20°, 1 degré = 0,02 l de plus
+  // si bpm > 120, 1 bpm = 0,0008 l de plus
+  // si steps > 10 000, 1 step = 0,000002 l de plus
+
+  // 1.5 + 0.02*this.state.temperature + 0.0008*this.state.heart + 0.000002*this.state.steps
 
   onHeartChange = (e) => {
     this.setState({heart: e.target.value})
@@ -31,6 +36,31 @@ class App extends React.Component {
 
   onTemperatureChange = (e) => {
     this.setState({temperature: e.target.value})
+  }
+
+  if (this.state.temperature > 20) {
+    const temperatureOver = (this.state.temperature-20) * 0.02
+  } else { 
+    const temperatureOver = 0
+  }
+
+  if (this.state.heart > 120) {
+    const heartOver = (this.state.heart-120) * 0.00008
+  } else { 
+    const heartOver = 0
+  }
+
+  if (this.state.temperature > 20) {
+    const stepsOver = (this.state.steps-10000) * 0.000002
+  } else { 
+    const stepsOver = 0
+  }
+
+  // const heartOver = this.state.heart * 0.0008
+  // const stepsOver = this.state.steps * 0.000002
+  
+  calculateWater = () => {
+    this.setState({water: 1.5 + {temperatureOver} + {heartOver} + {stepsOver}})
   }
 
 
@@ -46,7 +76,8 @@ class App extends React.Component {
             type="water" 
             icon="local_drink" 
             color="#3A85FF" 
-            value={this.state.water} 
+            value={this.calculateWater}
+            // value={this.state.water} 
             unit=" L"
           />
 
