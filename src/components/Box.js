@@ -10,7 +10,7 @@ class Box extends React.Component {
     //     type: this.state.type,
     //     icon: this.state.icon,
     //     color: this.state.color,
-    //     value: this.state.value,
+        // value: this.state.value,
     //     unit: this.state.unit
     // }
 
@@ -20,9 +20,9 @@ class Box extends React.Component {
     //   }
     // }
 
-    // handleChange = (e) => {
-    //   this.setState({value: e.target.value})
-    // }
+    handleChange = (e) => {
+      this.setState({value: e.target.value})
+    }
 
   render () {
   
@@ -50,12 +50,11 @@ class Box extends React.Component {
         { this.props.type != "water" && (
         <input
         type="range"
-        // value={this.props.value}
-        // min={this.props.rangeMin}
-        // max={this.props.rangeMax}
-        // onChange={this.handleChange}
-        // step="any"
-         />
+        defaultValue={this.props.value}
+        min={this.props.rangeMin}
+        max={this.props.rangeMax}
+        onChange={this.props.onChange}
+        />
         )}
   
 
@@ -81,69 +80,6 @@ export default Box
   //     }
   //   }
   
-
-  
-
-  // render() {
-  
-    // const { type, icon, color, value, unit } = this.state.box
-    // const unit = this.state.unit
-    // const isntWater = 5 
-
-    
-    // if (this.state.value = 3000) {
-    // if (this.props.type="water") {
-
-    // return (
-      
-    //   <div className="box col-sm3 col-6">
-        
-    //     <span
-    //       className="material-icons" 
-    //       style={{
-    //         fontSize: 100, 
-    //         color: this.props.color
-    //       }}>
-    //       {this.props.icon}
-    //     </span>
-            
-    //     <p>
-    //       {this.props.value}{this.props.unit}
-    //     </p>
-
-    //   </div>
-    // )
-    
-
-    // } else {
-
-//     return (
-      
-//       <div className="box col-sm3 col-6">
-        
-//         <span
-//           className="material-icons" 
-//           style={{
-//             fontSize: 100, 
-//             color: this.props.color
-//           }}>
-//           {this.props.icon}
-//         </span>
-            
-//         <p>
-//           {this.props.value}{this.props.unit}
-//         </p>
-
-//         {isntWater = 5 ? :
-//         <input type="range" />
-//         }
-       
-
-//       </div>
-//     )
-//   }
-
-// export default Box
 
      {/* à mettre dans l'input après "range" min={this.props.rangeMin} max={this.props.rangeMax} */}
     //  ajouter un onChange={this.fonction} ?

@@ -20,8 +20,21 @@ class App extends React.Component {
     steps: 3000
   }}
 
-  render() {
-    
+
+  onHeartChange = (e) => {
+    this.setState({heart: e.target.value})
+  }
+
+  onStepsChange = (e) => {
+    this.setState({steps: e.target.value})
+  }
+
+  onTemperatureChange = (e) => {
+    this.setState({temperature: e.target.value})
+  }
+
+
+  render() {    
 
     return (
       <div className="container-fluid">
@@ -45,6 +58,7 @@ class App extends React.Component {
             unit = " steps"
             rangeMin = {stepsMin}
             rangeMax = {stepsMax}
+            onChange = {this.onStepsChange}
           />
  
           <Box 
@@ -55,6 +69,7 @@ class App extends React.Component {
             unit =" bpm"
             rangeMin = {heartMin}
             rangeMax = {heartMax}
+            onChange = {this.onHeartChange}
           />
 
           <Box
@@ -65,6 +80,7 @@ class App extends React.Component {
             unit ="°C"
             rangeMin = {tempsMin}
             rangeMax = {tempsMax}
+            onChange = {this.onTemperatureChange}
           />
 
         </div>
